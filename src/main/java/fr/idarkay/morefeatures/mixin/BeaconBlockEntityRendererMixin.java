@@ -1,30 +1,25 @@
 package fr.idarkay.morefeatures.mixin;
 
 import fr.idarkay.morefeatures.FeaturesClient;
-import net.minecraft.block.entity.BeaconBlockEntity;
+import net.minecraft.block.entity.BeamEmitter;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.block.entity.BeaconBlockEntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.util.math.Vec3d;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 /**
- * File <b>BeaconBlockEntityRendererMixin</b> located on fr.idarkay.morefeatures.mixin
- * BeaconBlockEntityRendererMixin is a part of Features-mod_1.17.1.
- * <p>
- * Copyright (c) 2021 Features-mod_1.17.1.
- * <p>
- *
- * @author Alois. B. (IDarKay),
- * Created the 24/07/2021 at 18:40
+ * Canceling the rendering process of the beacon beam if wished by the player
  */
 @Mixin(BeaconBlockEntityRenderer.class)
-public abstract class BeaconBlockEntityRendererMixin {
+public abstract class BeaconBlockEntityRendererMixin<T extends BlockEntity & BeamEmitter> {
 
-    @Inject(method = "render(Lnet/minecraft/block/entity/BeaconBlockEntity;FLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;II)V", at = @At("HEAD"), cancellable = true)
-    public void render(BeaconBlockEntity beaconBlockEntity, float f, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, int j, CallbackInfo ci) {
+    @Inject(method = "render(Lnet/minecraft/block/entity/BlockEntity;FLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;IILnet/minecraft/util/math/Vec3d;)V", at = @At("HEAD"), cancellable = true)
+    public void render(T entity, float tickProgress, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay, Vec3d cameraPos, CallbackInfo ci) {
         if (!FeaturesClient.options().renderBeaconBeam) {
             ci.cancel();
         }

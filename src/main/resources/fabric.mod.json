@@ -3,15 +3,16 @@
   "id": "more_features_id",
   "version": "${version}",
 
-  "name": "MoreFeature",
-  "description": "Adds features, like a breaksafe for tools, to Minecraft.",
+  "name": "More QoL",
+  "description": "Adds QoL features, like a breaksafe for tools, to Minecraft.",
   "authors": [
     "IDarKay",
     "joshi1999"
   ],
   "contact": {
-    "homepage": "no",
-    "sources": "https://github.com/joshi1999/Features-mod"
+    "homepage": "https://github.com/joshi1999/More-QoL",
+    "sources": "https://github.com/joshi1999/More-QoL",
+    "issues": "https://github.com/joshi1999/More-QoL/issues"
   },
   "custom": {
     "modmenu": {

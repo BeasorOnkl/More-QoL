@@ -10,16 +10,6 @@ import net.minecraft.text.Text;
 
 import java.util.function.*;
 
-/**
- * File <b>BooleanOption</b> located on fr.idarkay.morefeature.options
- * BooleanOption is a part of featurs-mod.
- * <p>
- * Copyright (c) 2020 featurs-mod.
- * <p>
- *
- * @author Alois. B. (IDarKay),
- * Created the 28/07/2020 at 00:06
- */
 @Environment(EnvType.CLIENT)
 public class BooleanOption extends Option {
 

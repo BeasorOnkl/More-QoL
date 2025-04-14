@@ -3,6 +3,7 @@ package fr.idarkay.morefeatures.mixin;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Ordering;
 import com.mojang.blaze3d.systems.RenderSystem;
+import com.mojang.blaze3d.textures.TextureFormat;
 import fr.idarkay.morefeatures.FeaturesClient;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.MultilineText;
@@ -33,14 +34,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * File <b>InGameHudMixin</b> located on fr.idarkay.morefeature.mixin
- * InGameHudMixin is a part of featurs-mod.
- * <p>
- * Copyright (c) 2020 features-mod.
- * <p>
- *
- * @author Alois. B. (IDarKay),
- * Created the 28/07/2020 at 19:54
+ * Displaying of the status effect overlay
  */
 @Mixin(InGameHud.class)
 public abstract class InGameHudMixin {
@@ -49,36 +43,11 @@ public abstract class InGameHudMixin {
     @Final
     private MinecraftClient client;
 
-    //Deprecated since 1.21
-    //@Shadow
-    //private int scaledWidth;
-
-//    @Shadow private int scaledHeight;
-//
-//    @Shadow public abstract TextRenderer getFontRenderer();
-//
-//    @Shadow protected abstract void drawTextBackground(MatrixStack matrixStack, TextRenderer textRenderer, int i, int j, int k);
-
-//    @Shadow
-//    @Final
-//    private static Identifier PUMPKIN_BLUR;
-
     private static final Identifier AMBIENT_TEXTURE = Identifier.ofVanilla("textures/gui/sprites/hud/effect_background_ambient.png");
     private static final Identifier BACKGROUND_TEXTURE = Identifier.ofVanilla("textures/gui/sprites/hud/effect_background.png");
 
     @Shadow
     public abstract TextRenderer getTextRenderer();
-
-//    @ModifyVariable(method = "renderStatusEffectOverlay", at = @At(value = "INVOKE", target = "Ljava/util/List;add(Ljava/lang/Object;)Z"))
-//    private Runnable modifyListRunnable(Runnable prev)
-//    {
-//        this.client.getTextureManager().bindTexture(sprite.getAtlas().getId());
-//        RenderSystem.color4f(1.0F, 1.0F, 1.0F, finalF);
-//        drawSprite(matrixStack, finalK + 3, finalL + 3, this.getZOffset(), 18, 18, sprite);
-//
-//        String time = StatusEffectUtil.durationToString(statusEffectInstance, 1.0F);
-//        textRenderer.drawWithShadow(matrixStack, time, finalK, finalL + 25, 8355711);
-//    }
 
     @Inject(method = "renderStatusEffectOverlay", at = @At("HEAD"), cancellable = true)
     protected void renderStatusEffectOverlay(DrawContext context, RenderTickCounter counter, CallbackInfo ci) {
@@ -86,12 +55,12 @@ public abstract class InGameHudMixin {
         Collection<StatusEffectInstance> collection = this.client.player.getStatusEffects();
         if (!collection.isEmpty()) {
             TextRenderer textRenderer = this.getTextRenderer();
-            RenderSystem.enableBlend();
+            //RenderSystem.enableBlend();
             int i = 0;
             int j = 0;
             StatusEffectSpriteManager statusEffectSpriteManager = this.client.getStatusEffectSpriteManager();
             List<Runnable> list = Lists.newArrayListWithExpectedSize(collection.size());
-            RenderSystem.setShaderTexture(0, HandledScreen.BACKGROUND_TEXTURE);
+            RenderSystem.setShaderTexture(0, RenderSystem.getDevice().createTexture(HandledScreen.BACKGROUND_TEXTURE.toString(), TextureFormat.RGBA8, 1, 1, 1)); // HandledScreen.BACKGROUND_TEXTURE
             Iterator var7 = Ordering.natural().reverse().sortedCopy(collection).iterator();
 
             while (var7.hasNext()) {
@@ -134,7 +103,7 @@ public abstract class InGameHudMixin {
                     final int finalL = l;
                     final int finalK = k;
                     list.add(() -> {
-                        RenderSystem.setShaderTexture(0, sprite.getAtlasId());
+                        RenderSystem.setShaderTexture(0, RenderSystem.getDevice().createTexture(sprite.getAtlasId().toString(), TextureFormat.RGBA8, 1, 1, 1)); // sprite.getAtlasId()
                         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, finalF);
                         //1.20.4 // context.drawSprite(finalK + 3, finalL + 3, 0, 18, 18, sprite);
                         context.drawSpriteStretched(RenderLayer::getGuiTextured, sprite, finalK + 3, finalL + 3, 18, 18);

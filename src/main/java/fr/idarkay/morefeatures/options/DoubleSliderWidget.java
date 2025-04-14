@@ -6,16 +6,6 @@ import net.minecraft.client.gui.widget.SliderWidget;
 import net.minecraft.text.Text;
 
 
-/**
- * File <b>DoubleSliderWidget</b> located on fr.idarkay.morefeature.options
- * DoubleSliderWidget is a part of featurs-mod.
- * <p>
- * Copyright (c) 2020 featurs-mod.
- * <p>
- *
- * @author Alois. B. (IDarKay),
- * Created the 27/07/2020 at 23:28
- */
 @Environment(EnvType.CLIENT)
 public class DoubleSliderWidget extends SliderWidget {
     private final FeaturesGameOptions options;

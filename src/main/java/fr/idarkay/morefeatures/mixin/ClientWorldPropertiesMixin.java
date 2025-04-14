@@ -7,14 +7,7 @@ import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
 /**
- * File <b>PropertiesMixin</b> located on fr.idarkay.morefeature.mixin
- * PropertiesMixin is a part of featurs-mod.
- * <p>
- * Copyright (c) 2020 featurs-mod.
- * <p>
- *
- * @author Alois. B. (IDarKay),
- * Created the 31/07/2020 at 00:59
+ * Localtime implementation
  */
 @Mixin(ClientWorld.Properties.class)
 public abstract class ClientWorldPropertiesMixin {

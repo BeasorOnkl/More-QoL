@@ -10,16 +10,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-/**
- * File <b>FeaturesGameOptions</b> located on fr.idarkay.breaksafe.options
- * FeaturesGameOptions is a part of fabric-example-mod.
- * <p>
- * Copyright (c) 2020 fabric-example-mod.
- * <p>
- *
- * @author Alois. B. (IDarKay),
- * Created the 27/07/2020 at 17:17
- */
 @Environment(EnvType.CLIENT)
 public class FeaturesGameOptions {
 

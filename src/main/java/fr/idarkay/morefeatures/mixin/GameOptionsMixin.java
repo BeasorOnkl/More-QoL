@@ -12,14 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import static net.minecraft.client.option.GameOptions.getGenericValueText;
 
 /**
- * File <b>OptionMixin</b> located on fr.idarkay.morefeatures.mixin
- * OptionMixin is a part of featurs-mod.
- * <p>
- * Copyright (c) 2020 featurs-mod.
- * <p>
- *
- * @author Alois. B. (IDarKay),
- * Created the 08/09/2020 at 23:26
+ * Optionsintegration
  */
 @Mixin(GameOptions.class)
 public abstract class GameOptionsMixin {

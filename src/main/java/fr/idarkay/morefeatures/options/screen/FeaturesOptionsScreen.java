@@ -9,16 +9,6 @@ import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.screen.Screen;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * File <b>FeatursOptionsScreen</b> located on fr.idarkay.breaksafe.options
- * FeatursOptionsScreen is a part of fabric-example-mod.
- * <p>
- * Copyright (c) 2020 fabric-example-mod.
- * <p>
- *
- * @author Alois. B. (IDarKay),
- * Created the 27/07/2020 at 16:46
- */
 @Environment(EnvType.CLIENT)
 public class FeaturesOptionsScreen extends FeaturesScreen {
     private static final MenuButton[] SUB_MENU_BUTTONS = new MenuButton[]{MenuButtons.BREAKAGE_PROTECTION,

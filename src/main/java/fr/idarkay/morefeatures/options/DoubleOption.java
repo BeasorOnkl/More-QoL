@@ -11,16 +11,6 @@ import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
-/**
- * File <b>DoubleOption</b> located on fr.idarkay.morefeature.options
- * DoubleOption is a part of featurs-mod.
- * <p>
- * Copyright (c) 2020 featurs-mod.
- * <p>
- *
- * @author Alois. B. (IDarKay),
- * Created the 27/07/2020 at 23:46
- */
 @Environment(EnvType.CLIENT)
 public class DoubleOption extends Option {
 

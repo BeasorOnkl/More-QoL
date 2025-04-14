@@ -10,16 +10,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.function.BiFunction;
 
-/**
- * File <b>SubMenueButton</b> located on fr.idarkay.morefeatures.options.screen
- * SubMenueButton is a part of Features-mod_1.17.1.
- * <p>
- * Copyright (c) 2021 Features-mod_1.17.1.
- * <p>
- *
- * @author Alois. B. (IDarKay),
- * Created the 26/07/2021 at 21:46
- */
 public class MenuButton {
 
     private final Text name;

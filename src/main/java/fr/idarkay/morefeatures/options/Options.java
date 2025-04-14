@@ -2,16 +2,6 @@ package fr.idarkay.morefeatures.options;
 
 import net.minecraft.text.Text;
 
-/**
- * File <b>Options</b> located on fr.idarkay.morefeatures.options
- * Options is a part of Features-mod_1.17.1.
- * <p>
- * Copyright (c) 2021 Features-mod_1.17.1.
- * <p>
- *
- * @author Alois. B. (IDarKay),
- * Created the 06/08/2021 at 20:46
- */
 public abstract class Options {
     public static final BooleanOption BREAK_SAFE = new BooleanOption(
             Text.translatable("options.more_features_id.breakSafe"),

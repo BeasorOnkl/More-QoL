@@ -5,16 +5,6 @@ import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.widget.ClickableWidget;
 import net.minecraft.text.MutableText;
 
-/**
- * File <b>Option</b> located on fr.idarkay.morefeature.options
- * Option is a part of features-mod.
- * <p>
- * Copyright (c) 2020 features-mod.
- * <p>
- *
- * @author Alois. B. (IDarKay),
- * Created the 27/07/2020 at 23:47
- */
 @Environment(EnvType.CLIENT)
 public abstract class Option {
     protected final MutableText prefix;

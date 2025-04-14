@@ -5,16 +5,6 @@ import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import org.lwjgl.glfw.GLFW;
 
-/**
- * File <b>KeyBindings</b> located on fr.idarkay.morefeatures
- * KeyBindings is a part of featurs-mod.
- * <p>
- * Copyright (c) 2020 featurs-mod.
- * <p>
- *
- * @author Alois. B. (IDarKay),
- * Created the 31/07/2020 at 01:44
- */
 public abstract class KeyBindings {
     private static final String MOD_ID = FeaturesMod.MOD_ID;
 
