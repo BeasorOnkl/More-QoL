@@ -1,8 +1,9 @@
-<div aligne="center">
+<div>
 <h3>
 More QoL
 </h3>
 </div>
+<img src="src/main/resources/assets/more_features_id/icon.png" alt="Logo" width="256" height="256">
 
 ---
   [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
@@ -17,6 +18,8 @@ More QoL
 - [Dependency](#dependency)
 
 ## 🧐 About <a name = "about"></a>
+
+
 
 Mod created by <a href="https://github.com/IdarKay">IdarKay</a> and maintained by <a href="https://github.com/joshi1999">joshi1999</a><bR>
 Formerly known as "Features Mod" or "More Features", renamed to "More QoL" for consistency and clarity.
