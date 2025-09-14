@@ -24,7 +24,7 @@
   "breakSafe.more_features_id.title": "Item Bruchschutz",
   "options.more_features_id.protectDurability": "Item schützen ab: ",
   "options.more_features_id.protectSound": "Schutzsound: ",
-  "key.more_features_id.toggleBreakProtection": "Item Bruchschutz Togglen",
+  "key.more_features_id.toggleBreakProtection": "Item Bruchschutz Toggeln",
   "message.more_features_id.noBreakProtection": "§c§bWARNUNG: §rKein Item Bruchschutz aktiv!",
   "message.more_features_id.break_protectionOn": "Item Bruchschutz: §aAn",
   "message.more_features_id.break_protectionOff": "Item Bruchschutz: §cAus",
